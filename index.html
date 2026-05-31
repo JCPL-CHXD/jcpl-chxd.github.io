@@ -229,18 +229,117 @@
       ],
       cards: [
         {
-          title: 'Websites I Created',
-          subtitle: '',
-          contents: '<div class="item"><div class="item-top"><div><h4>CHXD WEBSITE</h4><p>Website I created</p></div><a href="https://example.com" target="_blank" rel="noopener noreferrer">Open link</a></div><div class="url-text">https://example.com</div></div><div class="item"><div class="item-top"><div><h4>My Portfolio</h4><p>Website I created</p></div><a href="https://example.com/portfolio" target="_blank" rel="noopener noreferrer">Open link</a></div><div class="url-text">https://example.com/portfolio</div></div>',
+          title: 'Websites',
+          subtitle: 'I created',
+          contents: `
+            <div class="item">
+              <div class="item-top">
+                <div>
+                  <h4>EDUCATIONAL WEBSITES</h4>
+                  <p>Learning resources and tools</p>
+                </div>
+              </div>
+            </div>
+        
+            <div class="item">
+              <div class="item-top">
+                <div>
+                  <h4>TASK GIVER</h4>
+                  <p>Programming Education • Helps you enhance coding</p>
+                </div>
+                <a href="https://tinyurl.com/taskgiver" target="_blank" rel="noopener noreferrer">
+                  Open Link
+                </a>
+              </div>
+              <div class="url-text">https://tinyurl.com/taskgiver</div>
+            </div>
+        
+            <div class="item">
+              <div class="item-top">
+                <div>
+                  <h4>TIMER / ALARM</h4>
+                  <p>Gives you an alarm or timer whenever needed</p>
+                </div>
+                <a href="https://tinyurl.com/taskgiver?nxt=timer" target="_blank" rel="noopener noreferrer">
+                  Open Link
+                </a>
+              </div>
+              <div class="url-text">https://tinyurl.com/taskgiver?nxt=timer</div>
+            </div>
+        
+            <div class="item">
+              <div class="item-top">
+                <div>
+                  <h4>LEARN JAVA</h4>
+                  <p>The Absolute Beginner's Guide to Java Data & Logic</p>
+                </div>
+                <a href="https://tinyurl.com/taskgiver?nxt=help" target="_blank" rel="noopener noreferrer">
+                  Open Link
+                </a>
+              </div>
+              <div class="url-text">https://tinyurl.com/taskgiver?nxt=help</div>
+            </div>
+        
+            <div class="item">
+              <div class="item-top">
+                <div>
+                  <h4>CODING PRACTICE GUIDE</h4>
+                  <p>Guides you in coding like a typing test</p>
+                </div>
+                <a href="https://tinyurl.com/taskgiver?special=PracticeGuide" target="_blank" rel="noopener noreferrer">
+                  Open Link
+                </a>
+              </div>
+              <div class="url-text">https://tinyurl.com/taskgiver?special=PracticeGuide</div>
+            </div>
+          `,
           css: `
-            .item { padding: 14px; border-radius: 14px; border: 1px solid var(--border-color); background: rgba(255,255,255,0.02); margin-top: 12px; }
-            .item:first-child { margin-top: 0; }
-            .item-top { display: flex; justify-content: space-between; gap: 12px; align-items: start; flex-wrap: wrap; }
-            .item h4 { font-size: 1.02rem; margin-bottom: 4px; }
-            .item p { color: var(--text-dim); }
-            .item a { color: var(--accent-blue); text-decoration: none; word-break: break-all; }
-            .item a:hover { text-decoration: underline; }
-            .url-text { margin-top: 10px; color: var(--text-dim); font-family: var(--font-mono); font-size: .88rem; word-break: break-all; }
+            .item {
+              padding: 14px;
+              border-radius: 14px;
+              border: 1px solid var(--border-color);
+              background: rgba(255,255,255,0.02);
+              margin-top: 12px;
+            }
+        
+            .item:first-child {
+              margin-top: 0;
+            }
+        
+            .item-top {
+              display: flex;
+              justify-content: space-between;
+              gap: 12px;
+              align-items: start;
+              flex-wrap: wrap;
+            }
+        
+            .item h4 {
+              font-size: 1.02rem;
+              margin-bottom: 4px;
+            }
+        
+            .item p {
+              color: var(--text-dim);
+            }
+        
+            .item a {
+              color: var(--accent-blue);
+              text-decoration: none;
+              word-break: break-all;
+            }
+        
+            .item a:hover {
+              text-decoration: underline;
+            }
+        
+            .url-text {
+              margin-top: 10px;
+              color: var(--text-dim);
+              font-family: var(--font-mono);
+              font-size: .88rem;
+              word-break: break-all;
+            }
           `
         },
         {

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <title>Personal Hub</title>
   <style>
     :root {
@@ -51,17 +52,28 @@
     .app-wrapper { max-width: 1280px; margin: 0 auto; }
 
     .main-header {
-      display: flex; justify-content: space-between; align-items: center; gap: 16px;
-      border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .brand { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 
     .brand-mark {
-      width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center;
-      font-family: var(--font-mono); font-weight: 800;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-mono);
+      font-weight: 800;
       background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
-      color: #fff; box-shadow: var(--shadow-style);
+      color: #fff;
+      box-shadow: var(--shadow-style);
     }
 
     .brand h1 { font-size: clamp(1.25rem, 2vw, 1.8rem); letter-spacing: -0.04em; }
@@ -70,8 +82,12 @@
     .header-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 
     .btn, button, .chip, .btn-link {
-      border: none; cursor: pointer; text-decoration: none; border-radius: 999px;
-      font-weight: 700; transition: 0.2s ease;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
     }
 
     .btn, button, .btn-link { padding: 10px 14px; }
@@ -82,30 +98,53 @@
 
     .hero {
       background: linear-gradient(180deg, rgba(56,189,248,0.08), transparent 60%), var(--card-bg);
-      border: 1px solid var(--border-color); box-shadow: var(--shadow-style);
-      border-radius: var(--radius); padding: 22px; margin-bottom: 18px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-style);
+      border-radius: var(--radius);
+      padding: 22px;
+      margin-bottom: 18px;
     }
 
     .hero-topline {
-      display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
-      color: var(--accent-green); font-size: 0.88rem; font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: var(--accent-green);
+      font-size: 0.88rem;
+      font-weight: 700;
     }
 
-    .dot { width: 8px; height: 8px; background: var(--accent-green); border-radius: 50%; box-shadow: 0 0 8px var(--accent-green); }
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-green);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-green);
+    }
+
     .hero h2 { font-size: clamp(1.6rem, 4vw, 3rem); line-height: 1.05; margin-bottom: 10px; }
     .hero .lead { color: var(--text-dim); max-width: 78ch; }
 
     .layout { display: grid; grid-template-columns: 280px 1fr; gap: 18px; align-items: start; }
 
     .side-panel {
-      background: var(--card-bg); border: 1px solid var(--border-color);
-      border-radius: var(--radius); box-shadow: var(--shadow-style);
-      position: sticky; top: 18px; overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-style);
+      position: sticky;
+      top: 18px;
+      overflow: hidden;
     }
 
     .side-head {
-      padding: 14px 16px; border-bottom: 1px solid var(--border-color);
-      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
     }
 
     .side-head h3 { font-size: 0.95rem; letter-spacing: 0.03em; }
@@ -114,9 +153,16 @@
     .toc { display: grid; gap: 8px; }
 
     .toc a {
-      display: flex; justify-content: space-between; gap: 10px; align-items: center;
-      padding: 10px 12px; border-radius: 12px; color: var(--text-main);
-      text-decoration: none; border: 1px solid transparent; background: rgba(255,255,255,0.02);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: var(--text-main);
+      text-decoration: none;
+      border: 1px solid transparent;
+      background: rgba(255,255,255,0.02);
     }
 
     .toc a:hover { border-color: var(--border-color); background: rgba(56,189,248,0.08); }
@@ -127,8 +173,11 @@
     .section-title { display: flex; align-items: center; gap: 10px; }
 
     .pulse-icon {
-      width: 10px; height: 10px; background: var(--accent-blue);
-      border-radius: 50%; animation: pulse 2s infinite;
+      width: 10px;
+      height: 10px;
+      background: var(--accent-blue);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
@@ -137,39 +186,60 @@
       100% { box-shadow: 0 0 0 0 rgba(56,189,248,0); }
     }
 
-    .profile-grid { display: grid; grid-template-columns: 320px 1fr; gap: 18px; margin-top: 18px; }
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
 
     .profile-frame, .profile-info {
-      background: var(--card-bg); border: 1px solid var(--border-color);
-      border-radius: var(--radius); box-shadow: var(--shadow-style); overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-style);
+      overflow: hidden;
     }
 
     .profile-frame-head, .profile-info-head {
-      padding: 14px 16px; border-bottom: 1px solid var(--border-color);
-      display: flex; justify-content: space-between; align-items: center; gap: 10px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
     }
 
     .profile-frame-body, .profile-info-body { padding: 16px; }
 
     iframe {
-      width: 100%; min-height: 360px; border: 1px solid var(--border-color);
-      border-radius: 14px; background: rgba(255,255,255,0.02);
+      width: 100%;
+      min-height: 360px;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.02);
     }
 
     .about-rows { display: grid; gap: 12px; }
 
     .about-line {
-      padding: 12px 14px; border: 1px solid var(--border-color);
-      border-radius: 14px; background: rgba(255,255,255,0.02);
+      padding: 12px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.02);
     }
 
     .about-line .k {
-      color: var(--accent-blue); font-size: 0.8rem;
-      font-weight: 800; text-transform: uppercase;
+      color: var(--accent-blue);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
     }
 
     .about-line .v {
-      margin-top: 4px; color: var(--text-main); white-space: pre-wrap;
+      margin-top: 4px;
+      color: var(--text-main);
+      white-space: pre-wrap;
     }
 
     .socials-list {
@@ -216,13 +286,19 @@
     .card-list { display: grid; gap: 18px; }
 
     .card {
-      background: var(--card-bg); border: 1px solid var(--border-color);
-      border-radius: var(--radius); box-shadow: var(--shadow-style);
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-style);
     }
 
     .card-head {
-      padding: 14px 16px; border-bottom: 1px solid var(--border-color);
-      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
     }
 
     .card-head h3 { font-size: 0.95rem; letter-spacing: 0.03em; }
@@ -233,25 +309,125 @@
     .card-content :is(p, ul, ol, pre, blockquote, h1, h2, h3, h4, h5, h6) { margin-bottom: 0.8rem; }
 
     .card-content code {
-      font-family: var(--font-mono); background: rgba(56,189,248,0.12);
-      padding: 0.15rem 0.35rem; border: 1px solid rgba(56,189,248,0.25);
-      border-radius: 8px; color: var(--accent-blue);
+      font-family: var(--font-mono);
+      background: rgba(56,189,248,0.12);
+      padding: 0.15rem 0.35rem;
+      border: 1px solid rgba(56,189,248,0.25);
+      border-radius: 8px;
+      color: var(--accent-blue);
     }
 
     .card-content pre {
-      overflow: auto; padding: 12px; border-radius: 12px;
-      background: rgba(0,0,0,0.22); border: 1px solid var(--border-color);
+      overflow: auto;
+      padding: 12px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.22);
+      border: 1px solid var(--border-color);
     }
 
     body.light-mode .card-content pre { background: #eff6ff; }
 
     .footer {
-      color: var(--text-dim); text-align: center; padding: 20px 10px 8px; font-size: 0.9rem;
+      color: var(--text-dim);
+      text-align: center;
+      padding: 20px 10px 8px;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 980px) {
       .layout, .profile-grid { grid-template-columns: 1fr; }
       .side-panel { position: static; }
+    }
+
+    .lang-section { display: grid; gap: 16px; }
+
+    .lang-cat {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 8px;
+    }
+
+    .lang-cat:first-child { margin-top: 0; }
+
+    .lang-item {
+      display: grid;
+      grid-template-columns: 42px 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .lang-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      position: relative;
+      font-family: var(--font-mono);
+      font-weight: 800;
+      font-size: 0.75rem;
+      flex: 0 0 auto;
+    }
+
+    .lang-icon img {
+      width: 68%;
+      height: 68%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lang-icon .fallback {
+      display: inline-block;
+      text-align: center;
+      line-height: 1;
+      padding: 0 3px;
+      font-size: 0.72rem;
+    }
+
+    .lang-info { display: grid; gap: 2px; }
+    .lang-name { font-weight: 700; font-size: 0.95rem; }
+    .lang-sub { color: var(--text-dim); font-size: 0.8rem; }
+
+    .progress-wrap {
+      display: grid;
+      grid-template-columns: 120px auto;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+      border-radius: 999px;
+      transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .lang-item.in-view .progress-fill { width: var(--pct); }
+
+    .progress-text {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: var(--accent-blue);
+      min-width: 35px;
+    }
+
+    @media (max-width: 500px) {
+      .progress-wrap { grid-template-columns: 1fr auto; }
     }
   </style>
 </head>
@@ -487,7 +663,7 @@
               <h4 class="lang-cat">Programming Languages</h4>
 
               <div class="lang-item" data-pct="70">
-                <div class="lang-icon">JS</div>
+                <div class="lang-icon" data-icon="devicon/javascript" data-fallback="JS"></div>
                 <div class="lang-info">
                   <div class="lang-name">JavaScript</div>
                   <div class="lang-sub">Frontend, DOM, Events, Fetch - no bitwise</div>
@@ -499,7 +675,7 @@
               </div>
 
               <div class="lang-item" data-pct="45">
-                <div class="lang-icon">JAVA</div>
+                <div class="lang-icon" data-icon="devicon/java" data-fallback="JAVA"></div>
                 <div class="lang-info">
                   <div class="lang-name">Java</div>
                   <div class="lang-sub">4 Pillars: Class, Inheritance, Polymorphism, Encapsulation</div>
@@ -511,7 +687,7 @@
               </div>
 
               <div class="lang-item" data-pct="45">
-                <div class="lang-icon">C#</div>
+                <div class="lang-icon" data-icon="devicon/csharp" data-fallback="C#"></div>
                 <div class="lang-info">
                   <div class="lang-name">C#</div>
                   <div class="lang-sub">Class, Inheritance, Polymorphism, Properties, WinForms</div>
@@ -523,7 +699,7 @@
               </div>
 
               <div class="lang-item" data-pct="40">
-                <div class="lang-icon">PY</div>
+                <div class="lang-icon" data-icon="devicon/python" data-fallback="PY"></div>
                 <div class="lang-info">
                   <div class="lang-name">Python</div>
                   <div class="lang-sub">Basic syntax, loops, functions, lists</div>
@@ -534,20 +710,20 @@
                 </div>
               </div>
 
-              <div class="lang-item" data-pct="35">
-                <div class="lang-icon">GD</div>
+              <div class="lang-item" data-pct="40">
+                <div class="lang-icon" data-icon="simple-icons/godotengine" data-fallback="GD"></div>
                 <div class="lang-info">
                   <div class="lang-name">GDScript</div>
                   <div class="lang-sub">Godot 4.6, nodes, signals, game scripting</div>
                 </div>
                 <div class="progress-wrap">
                   <div class="progress-bar"><div class="progress-fill"></div></div>
-                  <span class="progress-text">35%</span>
+                  <span class="progress-text">40%</span>
                 </div>
               </div>
 
               <div class="lang-item" data-pct="25">
-                <div class="lang-icon">LUA</div>
+                <div class="lang-icon" data-icon="simple-icons/roblox" data-fallback="LUA"></div>
                 <div class="lang-info">
                   <div class="lang-name">Luau</div>
                   <div class="lang-sub">Roblox scripting, events, tables</div>
@@ -559,7 +735,7 @@
               </div>
 
               <div class="lang-item" data-pct="15">
-                <div class="lang-icon">C++</div>
+                <div class="lang-icon" data-icon="devicon/cplusplus" data-fallback="C++"></div>
                 <div class="lang-info">
                   <div class="lang-name">C++</div>
                   <div class="lang-sub">iostream, cout, cin, basic functions</div>
@@ -571,7 +747,7 @@
               </div>
 
               <div class="lang-item" data-pct="5">
-                <div class="lang-icon">C</div>
+                <div class="lang-icon" data-icon="devicon/c" data-fallback="C"></div>
                 <div class="lang-info">
                   <div class="lang-name">C</div>
                   <div class="lang-sub">stdio, printf, basic syntax</div>
@@ -583,7 +759,7 @@
               </div>
 
               <div class="lang-item" data-pct="1">
-                <div class="lang-icon">ASM</div>
+                <div class="lang-icon" data-icon="mdi/chip" data-fallback="ASM"></div>
                 <div class="lang-info">
                   <div class="lang-name">Assembly x86</div>
                   <div class="lang-sub">_start, .data section, ASCII numeric values</div>
@@ -595,7 +771,7 @@
               </div>
 
               <div class="lang-item" data-pct="0.5">
-                <div class="lang-icon">PHP</div>
+                <div class="lang-icon" data-icon="devicon/php" data-fallback="PHP"></div>
                 <div class="lang-info">
                   <div class="lang-name">PHP</div>
                   <div class="lang-sub">Can create variables: $var</div>
@@ -609,7 +785,7 @@
               <h4 class="lang-cat">Markup Languages</h4>
 
               <div class="lang-item" data-pct="85">
-                <div class="lang-icon">MD</div>
+                <div class="lang-icon" data-icon="simple-icons/markdown" data-fallback="MD"></div>
                 <div class="lang-info">
                   <div class="lang-name">Markdown</div>
                   <div class="lang-sub">Docs, README files</div>
@@ -621,7 +797,7 @@
               </div>
 
               <div class="lang-item" data-pct="70">
-                <div class="lang-icon">HTML</div>
+                <div class="lang-icon" data-icon="devicon/html5" data-fallback="HTML"></div>
                 <div class="lang-info">
                   <div class="lang-name">HTML</div>
                   <div class="lang-sub">Know tags but rely on autocomplete</div>
@@ -635,7 +811,7 @@
               <h4 class="lang-cat">Others</h4>
 
               <div class="lang-item" data-pct="60">
-                <div class="lang-icon">JSON</div>
+                <div class="lang-icon" data-icon="mdi/code-json" data-fallback="JSON"></div>
                 <div class="lang-info">
                   <div class="lang-name">JSON</div>
                   <div class="lang-sub">Data storage, API responses, configs</div>
@@ -647,7 +823,7 @@
               </div>
 
               <div class="lang-item" data-pct="40">
-                <div class="lang-icon">CSS</div>
+                <div class="lang-icon" data-icon="devicon/css3" data-fallback="CSS"></div>
                 <div class="lang-info">
                   <div class="lang-name">CSS</div>
                   <div class="lang-sub">Know it but struggle without drag-drop</div>
@@ -659,7 +835,7 @@
               </div>
 
               <div class="lang-item" data-pct="0">
-                <div class="lang-icon">SQL</div>
+                <div class="lang-icon" data-icon="mdi/database" data-fallback="SQL"></div>
                 <div class="lang-info">
                   <div class="lang-name">SQL</div>
                   <div class="lang-sub">Want to learn - query language</div>
@@ -673,6 +849,7 @@
           `,
           css: `
             .lang-section { display: grid; gap: 16px; }
+
             .lang-cat {
               font-size: 0.85rem;
               font-weight: 800;
@@ -681,38 +858,64 @@
               letter-spacing: 0.05em;
               margin-top: 8px;
             }
+
             .lang-cat:first-child { margin-top: 0; }
+
             .lang-item {
               display: grid;
               grid-template-columns: 42px 1fr auto;
               gap: 12px;
               align-items: center;
             }
-            .lang-icon {
-              width: 42px; height: 42px;
-              border-radius: 12px;
-              background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
-              color: #fff;
-              display: grid; place-items: center;
-              font-family: var(--font-mono);
-              font-weight: 800;
-              font-size: 0.75rem;
+
+            .lang-icon{
+              width:42px;
+              height:42px;
+              border-radius:12px;
+            
+              background:transparent;
+              border:1px solid var(--border-color);
+            
+              display:flex;
+              align-items:center;
+              justify-content:center;
+            
+              overflow:hidden;
             }
+
+            .lang-icon img {
+              width: 68%;
+              height: 68%;
+              object-fit: contain;
+              display: block;
+            }
+
+            .lang-icon .fallback {
+              display: inline-block;
+              text-align: center;
+              line-height: 1;
+              padding: 0 3px;
+              font-size: 0.72rem;
+            }
+
             .lang-info { display: grid; gap: 2px; }
             .lang-name { font-weight: 700; font-size: 0.95rem; }
             .lang-sub { color: var(--text-dim); font-size: 0.8rem; }
+
             .progress-wrap {
               display: grid;
               grid-template-columns: 120px auto;
               gap: 10px;
               align-items: center;
             }
+
             .progress-bar {
               height: 8px;
               background: rgba(255,255,255,0.08);
               border-radius: 999px;
               overflow: hidden;
             }
+
             .progress-fill {
               height: 100%;
               width: 0%;
@@ -720,9 +923,11 @@
               border-radius: 999px;
               transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
             }
+
             .lang-item.in-view .progress-fill {
               width: var(--pct);
             }
+
             .progress-text {
               font-family: var(--font-mono);
               font-weight: 700;
@@ -730,12 +935,14 @@
               color: var(--accent-blue);
               min-width: 35px;
             }
+
             @media (max-width: 500px) {
               .progress-wrap { grid-template-columns: 1fr auto; }
             }
           `,
           script: (cardEl) => {
             const items = cardEl.querySelectorAll('.lang-item');
+
             items.forEach(item => {
               const pct = item.dataset.pct + '%';
               item.style.setProperty('--pct', pct);
@@ -824,10 +1031,31 @@
         : '<div class="about-line"><div class="v">No info added yet.</div></div>';
     }
 
+    function loadLanguageIcons(cardEl) {
+      const icons = cardEl.querySelectorAll('.lang-icon');
+
+      icons.forEach(iconEl => {
+        const iconName = iconEl.dataset.icon;
+        const fallbackText = iconEl.dataset.fallback || '?';
+
+        iconEl.innerHTML = '';
+
+        const img = document.createElement('img');
+        img.alt = fallbackText;
+        img.loading = 'lazy';
+        img.src = `https://api.iconify.design/${iconName}.svg?color=%2338bdf8`;
+
+        img.onerror = () => {
+          iconEl.innerHTML = `<span class="fallback">${escapeHtml(fallbackText)}</span>`;
+        };
+
+        iconEl.appendChild(img);
+      });
+    }
+
     function renderCards(cards) {
       $('cardList').innerHTML = cards.length ? cards.map((card, index) => `
         <section class="card" id="card-${index}">
-          <style>${card.css || ''}</style>
           <div class="card-head">
             <div class="section-title"><span class="pulse-icon"></span><h3>${escapeHtml(card.title || 'Untitled')}</h3></div>
             <span class="card-subhead">${escapeHtml(card.subtitle || '')}</span>
@@ -841,10 +1069,27 @@
       `).join('') : '';
 
       cards.forEach((card, i) => {
+        const cardEl = document.getElementById(`card-${i}`);
+        if (cardEl) loadLanguageIcons(cardEl);
+
         if (typeof card.script === 'function') {
-          try { card.script(document.getElementById(`card-${i}`)); } catch(e) { console.error(e); }
+          try {
+            card.script(cardEl);
+          } catch (e) {
+            console.error(e);
+          }
         }
       });
+    }
+
+    function injectCardStyles(cards) {
+      const old = document.getElementById('cardStyles');
+      if (old) old.remove();
+
+      const style = document.createElement('style');
+      style.id = 'cardStyles';
+      style.textContent = cards.map(card => card.css || '').join('\n');
+      document.head.appendChild(style);
     }
 
     function renderAll(data) {
@@ -854,6 +1099,7 @@
       $('heroLead').textContent = data.heroLead;
       renderTOC(data);
       renderAboutRows(data.about || []);
+      injectCardStyles(data.cards || []);
       renderCards(data.cards || []);
     }
 

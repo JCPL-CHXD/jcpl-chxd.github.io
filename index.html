@@ -20,6 +20,7 @@
       --shadow-style: 0 10px 15px -3px rgba(0,0,0,0.3);
       --radius: 16px;
     }
+
     body.light-mode {
       --bg-dark: #f3f4f6;
       --card-bg: #ffffff;
@@ -32,8 +33,10 @@
       --accent-orange: #ea580c;
       --terminal-bg: #0f172a;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+
     body {
       background: radial-gradient(circle at top, rgba(56,189,248,0.12), transparent 30%), var(--bg-dark);
       color: var(--text-main);
@@ -42,111 +45,210 @@
       padding: 20px;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
+
     a { color: inherit; }
+
     .app-wrapper { max-width: 1280px; margin: 0 auto; }
+
     .main-header {
       display: flex; justify-content: space-between; align-items: center; gap: 16px;
       border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 18px;
     }
-    .social-link {
-      margin-top: 6px;
-    }
-    
-    .social-link a {
-      color: var(--accent-blue);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    
-    .social-link a:hover {
-      text-decoration: underline;
-    }
+
     .brand { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
     .brand-mark {
       width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center;
       font-family: var(--font-mono); font-weight: 800;
       background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
       color: #fff; box-shadow: var(--shadow-style);
     }
+
     .brand h1 { font-size: clamp(1.25rem, 2vw, 1.8rem); letter-spacing: -0.04em; }
     .brand p { color: var(--text-dim); font-size: 0.92rem; }
+
     .header-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
     .btn, button, .chip, .btn-link {
       border: none; cursor: pointer; text-decoration: none; border-radius: 999px;
       font-weight: 700; transition: 0.2s ease;
     }
+
     .btn, button, .btn-link { padding: 10px 14px; }
     .btn-primary { background: var(--accent-blue); color: #fff; }
     .btn-success { background: var(--accent-green); color: #fff; }
     .btn-outline { background: transparent; border: 1px solid var(--border-color); color: var(--text-main); }
     .btn:hover, button:hover, .btn-link:hover { transform: translateY(-1px); filter: brightness(1.06); }
+
     .hero {
       background: linear-gradient(180deg, rgba(56,189,248,0.08), transparent 60%), var(--card-bg);
       border: 1px solid var(--border-color); box-shadow: var(--shadow-style);
       border-radius: var(--radius); padding: 22px; margin-bottom: 18px;
     }
+
     .hero-topline {
       display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
       color: var(--accent-green); font-size: 0.88rem; font-weight: 700;
     }
+
     .dot { width: 8px; height: 8px; background: var(--accent-green); border-radius: 50%; box-shadow: 0 0 8px var(--accent-green); }
     .hero h2 { font-size: clamp(1.6rem, 4vw, 3rem); line-height: 1.05; margin-bottom: 10px; }
     .hero .lead { color: var(--text-dim); max-width: 78ch; }
+
     .layout { display: grid; grid-template-columns: 280px 1fr; gap: 18px; align-items: start; }
+
     .side-panel {
       background: var(--card-bg); border: 1px solid var(--border-color);
       border-radius: var(--radius); box-shadow: var(--shadow-style);
       position: sticky; top: 18px; overflow: hidden;
     }
-    .side-head { padding: 14px 16px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+
+    .side-head {
+      padding: 14px 16px; border-bottom: 1px solid var(--border-color);
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    }
+
     .side-head h3 { font-size: 0.95rem; letter-spacing: 0.03em; }
     .side-body { padding: 16px; }
+
     .toc { display: grid; gap: 8px; }
+
     .toc a {
       display: flex; justify-content: space-between; gap: 10px; align-items: center;
       padding: 10px 12px; border-radius: 12px; color: var(--text-main);
       text-decoration: none; border: 1px solid transparent; background: rgba(255,255,255,0.02);
     }
+
     .toc a:hover { border-color: var(--border-color); background: rgba(56,189,248,0.08); }
     .toc small { color: var(--text-dim); }
+
     .stack { display: grid; gap: 18px; }
+
     .section-title { display: flex; align-items: center; gap: 10px; }
-    .pulse-icon { width: 10px; height: 10px; background: var(--accent-blue); border-radius: 50%; animation: pulse 2s infinite; }
+
+    .pulse-icon {
+      width: 10px; height: 10px; background: var(--accent-blue);
+      border-radius: 50%; animation: pulse 2s infinite;
+    }
+
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(56,189,248,0.65); }
       70% { box-shadow: 0 0 0 10px rgba(56,189,248,0); }
       100% { box-shadow: 0 0 0 0 rgba(56,189,248,0); }
     }
+
     .profile-grid { display: grid; grid-template-columns: 320px 1fr; gap: 18px; margin-top: 18px; }
+
     .profile-frame, .profile-info {
       background: var(--card-bg); border: 1px solid var(--border-color);
       border-radius: var(--radius); box-shadow: var(--shadow-style); overflow: hidden;
     }
+
     .profile-frame-head, .profile-info-head {
       padding: 14px 16px; border-bottom: 1px solid var(--border-color);
       display: flex; justify-content: space-between; align-items: center; gap: 10px;
     }
+
     .profile-frame-body, .profile-info-body { padding: 16px; }
-    iframe { width: 100%; min-height: 360px; border: 1px solid var(--border-color); border-radius: 14px; background: rgba(255,255,255,0.02); }
+
+    iframe {
+      width: 100%; min-height: 360px; border: 1px solid var(--border-color);
+      border-radius: 14px; background: rgba(255,255,255,0.02);
+    }
+
     .about-rows { display: grid; gap: 12px; }
-    .about-line { padding: 12px 14px; border: 1px solid var(--border-color); border-radius: 14px; background: rgba(255,255,255,0.02); }
-    .about-line .k { color: var(--accent-blue); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; }
-    .about-line .v { margin-top: 4px; color: var(--text-main); white-space: pre-wrap; }
+
+    .about-line {
+      padding: 12px 14px; border: 1px solid var(--border-color);
+      border-radius: 14px; background: rgba(255,255,255,0.02);
+    }
+
+    .about-line .k {
+      color: var(--accent-blue); font-size: 0.8rem;
+      font-weight: 800; text-transform: uppercase;
+    }
+
+    .about-line .v {
+      margin-top: 4px; color: var(--text-main); white-space: pre-wrap;
+    }
+
+    .socials-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    .social-link {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 10px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      text-decoration: none;
+      color: var(--text-main);
+      transition: 0.2s ease;
+      min-width: 0;
+    }
+
+    .social-link:hover {
+      transform: translateY(-1px);
+      border-color: rgba(56,189,248,0.5);
+      background: rgba(56,189,248,0.08);
+    }
+
+    .social-link .name {
+      font-weight: 700;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .social-link .subtitle {
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      word-break: break-all;
+      line-height: 1.35;
+    }
+
     .card-list { display: grid; gap: 18px; }
-    /* SHARED CARD STRUCTURE - GLOBAL */
-    .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius); box-shadow: var(--shadow-style); }
-    .card-head { padding: 14px 16px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+
+    .card {
+      background: var(--card-bg); border: 1px solid var(--border-color);
+      border-radius: var(--radius); box-shadow: var(--shadow-style);
+    }
+
+    .card-head {
+      padding: 14px 16px; border-bottom: 1px solid var(--border-color);
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    }
+
     .card-head h3 { font-size: 0.95rem; letter-spacing: 0.03em; }
     .card-body { padding: 16px; }
     .card-subhead { color: var(--text-dim); font-size: 0.86rem; }
     .card-content { padding: 8px; }
     .card-content hr { border: none; margin: 12px 0; }
-    /* SHARED CONTENT STYLES - GLOBAL BECAUSE ALL CARDS USE THESE */
     .card-content :is(p, ul, ol, pre, blockquote, h1, h2, h3, h4, h5, h6) { margin-bottom: 0.8rem; }
-    .card-content code { font-family: var(--font-mono); background: rgba(56,189,248,0.12); padding: 0.15rem 0.35rem; border: 1px solid rgba(56,189,248,0.25); border-radius: 8px; color: var(--accent-blue); }
-    .card-content pre { overflow: auto; padding: 12px; border-radius: 12px; background: rgba(0,0,0,0.22); border: 1px solid var(--border-color); }
+
+    .card-content code {
+      font-family: var(--font-mono); background: rgba(56,189,248,0.12);
+      padding: 0.15rem 0.35rem; border: 1px solid rgba(56,189,248,0.25);
+      border-radius: 8px; color: var(--accent-blue);
+    }
+
+    .card-content pre {
+      overflow: auto; padding: 12px; border-radius: 12px;
+      background: rgba(0,0,0,0.22); border: 1px solid var(--border-color);
+    }
+
     body.light-mode .card-content pre { background: #eff6ff; }
-    .footer { color: var(--text-dim); text-align: center; padding: 20px 10px 8px; font-size: 0.9rem; }
+
+    .footer {
+      color: var(--text-dim); text-align: center; padding: 20px 10px 8px; font-size: 0.9rem;
+    }
+
     @media (max-width: 980px) {
       .layout, .profile-grid { grid-template-columns: 1fr; }
       .side-panel { position: static; }
@@ -185,6 +287,7 @@
           <iframe id="profileFrame" title="Profile Media" src="https://jcpl-chxd.github.io/profile"></iframe>
         </div>
       </div>
+
       <div class="profile-info">
         <div class="profile-info-head">
           <div class="section-title"><span class="pulse-icon"></span><h3>About Me</h3></div>
@@ -195,8 +298,10 @@
         </div>
       </div>
     </section>
+
     <br>
-    <div class="layout">
+
+    <div class="layout" id="cardsStart">
       <aside class="side-panel">
         <div class="side-head">
           <h3>Table of Contents</h3>
@@ -206,16 +311,18 @@
           <nav class="toc" id="toc"></nav>
         </div>
       </aside>
+
       <main class="stack">
         <div id="cardList" class="card-list" aria-label="Cards"></div>
       </main>
     </div>
+
     <div class="footer">Built as a static personal hub with light mode and dark mode.</div>
   </div>
 
   <script>
-    const THEME_KEY = '';
-    
+    const THEME_KEY = 'personal-hub-theme';
+
     const siteData = {
       siteName: 'CHXD Hub',
       tagline: 'A public home for my websites, notes, and everything I have built.',
@@ -223,22 +330,22 @@
       heroLead: 'This page is made to show who I am, the websites I created, and the things I learned and want to keep as notes. You can stay and learn something too',
       profileFrameHtml: '',
       about: [
-        { 
-          label: 'Name', 
-          value: 'CHXD' 
+        {
+          label: 'Name',
+          value: 'CHXD'
         },
-        { 
-          label: 'Bio', 
-          value: 'I’m not a professional developer. I code as a hobby, building whatever project my brain won’t stop thinking about. That’s led to educational websites, small games, and a few Android APKs. I’m driven by curiosity, not deadlines or clients.' 
+        {
+          label: 'Bio',
+          value: 'I’m not a professional developer. I code as a hobby, building whatever project my brain won’t stop thinking about. That’s led to educational websites, small games, and a few Android APKs. I’m driven by curiosity, not deadlines or clients.'
         },
-        { 
-          label: 'Focus', 
-          value: 'Right now I’m diving into backend fundamentals and how computers really work under the hood. I’m exploring binaries, compression algorithms, bitwise operations, hashing, and networking. Working with frontend APIs, headers, and request bodies made me curious about the other side of the wire.' 
+        {
+          label: 'Focus',
+          value: 'Right now I’m diving into backend fundamentals and how computers really work under the hood. I’m exploring binaries, compression algorithms, bitwise operations, hashing, and networking. Working with frontend APIs, headers, and request bodies made me curious about the other side of the wire.'
         },
-        { 
-          label: 'Socials', 
+        {
+          label: 'Socials',
           socials: [
-            ['ko-fi.com/chxd', 'https://ko-fi.com/chxd']
+            ['Ko-fi', 'https://ko-fi.com/chxd']
           ]
         }
       ],
@@ -256,55 +363,47 @@
                 </div>
               </div>
             </div>
-        
+
             <div class="item">
               <div class="item-top">
                 <div>
                   <h4>TASK GIVER</h4>
                   <p>Programming Education • Helps you enhance coding</p>
                 </div>
-                <a href="https://tinyurl.com/taskgiver" target="_blank" rel="noopener noreferrer">
-                  Open Link
-                </a>
+                <a href="https://tinyurl.com/taskgiver" target="_blank" rel="noopener noreferrer">Open Link</a>
               </div>
               <div class="url-text">https://tinyurl.com/taskgiver</div>
             </div>
-        
+
             <div class="item">
               <div class="item-top">
                 <div>
                   <h4>TIMER / ALARM</h4>
                   <p>Gives you an alarm or timer whenever needed</p>
                 </div>
-                <a href="https://tinyurl.com/taskgiver?nxt=timer" target="_blank" rel="noopener noreferrer">
-                  Open Link
-                </a>
+                <a href="https://tinyurl.com/taskgiver?nxt=timer" target="_blank" rel="noopener noreferrer">Open Link</a>
               </div>
               <div class="url-text">https://tinyurl.com/taskgiver?nxt=timer</div>
             </div>
-        
+
             <div class="item">
               <div class="item-top">
                 <div>
                   <h4>LEARN JAVA</h4>
                   <p>The Absolute Beginner's Guide to Java Data & Logic</p>
                 </div>
-                <a href="https://tinyurl.com/taskgiver?nxt=help" target="_blank" rel="noopener noreferrer">
-                  Open Link
-                </a>
+                <a href="https://tinyurl.com/taskgiver?nxt=help" target="_blank" rel="noopener noreferrer">Open Link</a>
               </div>
               <div class="url-text">https://tinyurl.com/taskgiver?nxt=help</div>
             </div>
-        
+
             <div class="item">
               <div class="item-top">
                 <div>
                   <h4>CODING PRACTICE GUIDE</h4>
                   <p>Guides you in coding like a typing test</p>
                 </div>
-                <a href="https://tinyurl.com/taskgiver?special=PracticeGuide" target="_blank" rel="noopener noreferrer">
-                  Open Link
-                </a>
+                <a href="https://tinyurl.com/taskgiver?special=PracticeGuide" target="_blank" rel="noopener noreferrer">Open Link</a>
               </div>
               <div class="url-text">https://tinyurl.com/taskgiver?special=PracticeGuide</div>
             </div>
@@ -315,9 +414,7 @@
                   <h4>Train Electronics</h4>
                   <p>Build basic electronics and Logic Gates</p>
                 </div>
-                <a href="https://tinyurl.com/trainelectronics" target="_blank" rel="noopener noreferrer">
-                  Open Link
-                </a>
+                <a href="https://tinyurl.com/trainelectronics" target="_blank" rel="noopener noreferrer">Open Link</a>
               </div>
               <div class="url-text">https://tinyurl.com/trainelectronics</div>
             </div>
@@ -328,14 +425,10 @@
                   <h4>Advanced Train Electronics</h4>
                   <p>Build basic electronics and Logic Gates(More Advance)</p>
                 </div>
-                <a href="https://tinyurl.com/electricdig" target="_blank" rel="noopener noreferrer">
-                  Open Link
-                </a>
+                <a href="https://tinyurl.com/electricdig" target="_blank" rel="noopener noreferrer">Open Link</a>
               </div>
               <div class="url-text">https://tinyurl.com/electricdig</div>
             </div>
-
-            
           `,
           css: `
             .item {
@@ -345,11 +438,11 @@
               background: rgba(255,255,255,0.02);
               margin-top: 12px;
             }
-        
+
             .item:first-child {
               margin-top: 0;
             }
-        
+
             .item-top {
               display: flex;
               justify-content: space-between;
@@ -357,26 +450,26 @@
               align-items: start;
               flex-wrap: wrap;
             }
-        
+
             .item h4 {
               font-size: 1.02rem;
               margin-bottom: 4px;
             }
-        
+
             .item p {
               color: var(--text-dim);
             }
-        
+
             .item a {
               color: var(--accent-blue);
               text-decoration: none;
               word-break: break-all;
             }
-        
+
             .item a:hover {
               text-decoration: underline;
             }
-        
+
             .url-text {
               margin-top: 10px;
               color: var(--text-dim);
@@ -392,7 +485,7 @@
           contents: `
             <div class="lang-section">
               <h4 class="lang-cat">Programming Languages</h4>
-              
+
               <div class="lang-item" data-pct="70">
                 <div class="lang-icon">JS</div>
                 <div class="lang-info">
@@ -404,7 +497,7 @@
                   <span class="progress-text">70%</span>
                 </div>
               </div>
-          
+
               <div class="lang-item" data-pct="45">
                 <div class="lang-icon">JAVA</div>
                 <div class="lang-info">
@@ -416,7 +509,7 @@
                   <span class="progress-text">45%</span>
                 </div>
               </div>
-          
+
               <div class="lang-item" data-pct="45">
                 <div class="lang-icon">C#</div>
                 <div class="lang-info">
@@ -428,7 +521,7 @@
                   <span class="progress-text">45%</span>
                 </div>
               </div>
-          
+
               <div class="lang-item" data-pct="40">
                 <div class="lang-icon">PY</div>
                 <div class="lang-info">
@@ -440,7 +533,7 @@
                   <span class="progress-text">40%</span>
                 </div>
               </div>
-          
+
               <div class="lang-item" data-pct="35">
                 <div class="lang-icon">GD</div>
                 <div class="lang-info">
@@ -452,7 +545,7 @@
                   <span class="progress-text">35%</span>
                 </div>
               </div>
-          
+
               <div class="lang-item" data-pct="25">
                 <div class="lang-icon">LUA</div>
                 <div class="lang-info">
@@ -464,7 +557,7 @@
                   <span class="progress-text">25%</span>
                 </div>
               </div>
-          
+
               <div class="lang-item" data-pct="15">
                 <div class="lang-icon">C++</div>
                 <div class="lang-info">
@@ -476,7 +569,7 @@
                   <span class="progress-text">15%</span>
                 </div>
               </div>
-          
+
               <div class="lang-item" data-pct="5">
                 <div class="lang-icon">C</div>
                 <div class="lang-info">
@@ -488,7 +581,7 @@
                   <span class="progress-text">5%</span>
                 </div>
               </div>
-          
+
               <div class="lang-item" data-pct="1">
                 <div class="lang-icon">ASM</div>
                 <div class="lang-info">
@@ -500,7 +593,7 @@
                   <span class="progress-text">1%</span>
                 </div>
               </div>
-          
+
               <div class="lang-item" data-pct="0.5">
                 <div class="lang-icon">PHP</div>
                 <div class="lang-info">
@@ -512,9 +605,9 @@
                   <span class="progress-text">0.5%</span>
                 </div>
               </div>
-          
+
               <h4 class="lang-cat">Markup Languages</h4>
-              
+
               <div class="lang-item" data-pct="85">
                 <div class="lang-icon">MD</div>
                 <div class="lang-info">
@@ -526,7 +619,7 @@
                   <span class="progress-text">85%</span>
                 </div>
               </div>
-          
+
               <div class="lang-item" data-pct="70">
                 <div class="lang-icon">HTML</div>
                 <div class="lang-info">
@@ -538,9 +631,9 @@
                   <span class="progress-text">70%</span>
                 </div>
               </div>
-          
+
               <h4 class="lang-cat">Others</h4>
-              
+
               <div class="lang-item" data-pct="60">
                 <div class="lang-icon">JSON</div>
                 <div class="lang-info">
@@ -552,7 +645,7 @@
                   <span class="progress-text">60%</span>
                 </div>
               </div>
-          
+
               <div class="lang-item" data-pct="40">
                 <div class="lang-icon">CSS</div>
                 <div class="lang-info">
@@ -564,7 +657,7 @@
                   <span class="progress-text">40%</span>
                 </div>
               </div>
-          
+
               <div class="lang-item" data-pct="0">
                 <div class="lang-icon">SQL</div>
                 <div class="lang-info">
@@ -580,45 +673,45 @@
           `,
           css: `
             .lang-section { display: grid; gap: 16px; }
-            .lang-cat { 
-              font-size: 0.85rem; 
-              font-weight: 800; 
-              color: var(--accent-blue); 
-              text-transform: uppercase; 
+            .lang-cat {
+              font-size: 0.85rem;
+              font-weight: 800;
+              color: var(--accent-blue);
+              text-transform: uppercase;
               letter-spacing: 0.05em;
               margin-top: 8px;
             }
             .lang-cat:first-child { margin-top: 0; }
-            .lang-item { 
-              display: grid; 
-              grid-template-columns: 42px 1fr auto; 
-              gap: 12px; 
-              align-items: center; 
+            .lang-item {
+              display: grid;
+              grid-template-columns: 42px 1fr auto;
+              gap: 12px;
+              align-items: center;
             }
-            .lang-icon { 
-              width: 42px; height: 42px; 
-              border-radius: 12px; 
-              background: linear-gradient(135deg, var(--accent-blue), var(--accent-green)); 
-              color: #fff; 
-              display: grid; place-items: center; 
-              font-family: var(--font-mono); 
-              font-weight: 800; 
+            .lang-icon {
+              width: 42px; height: 42px;
+              border-radius: 12px;
+              background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+              color: #fff;
+              display: grid; place-items: center;
+              font-family: var(--font-mono);
+              font-weight: 800;
               font-size: 0.75rem;
             }
             .lang-info { display: grid; gap: 2px; }
             .lang-name { font-weight: 700; font-size: 0.95rem; }
             .lang-sub { color: var(--text-dim); font-size: 0.8rem; }
-            .progress-wrap { 
-              display: grid; 
-              grid-template-columns: 120px auto; 
-              gap: 10px; 
-              align-items: center; 
+            .progress-wrap {
+              display: grid;
+              grid-template-columns: 120px auto;
+              gap: 10px;
+              align-items: center;
             }
-            .progress-bar { 
-              height: 8px; 
-              background: rgba(255,255,255,0.08); 
-              border-radius: 999px; 
-              overflow: hidden; 
+            .progress-bar {
+              height: 8px;
+              background: rgba(255,255,255,0.08);
+              border-radius: 999px;
+              overflow: hidden;
             }
             .progress-fill {
               height: 100%;
@@ -630,10 +723,10 @@
             .lang-item.in-view .progress-fill {
               width: var(--pct);
             }
-            .progress-text { 
-              font-family: var(--font-mono); 
-              font-weight: 700; 
-              font-size: 0.8rem; 
+            .progress-text {
+              font-family: var(--font-mono);
+              font-weight: 700;
+              font-size: 0.8rem;
               color: var(--accent-blue);
               min-width: 35px;
             }
@@ -647,6 +740,7 @@
               const pct = item.dataset.pct + '%';
               item.style.setProperty('--pct', pct);
             });
+
             const observer = new IntersectionObserver((entries) => {
               entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -656,6 +750,7 @@
                 }
               });
             }, { threshold: 0.3 });
+
             items.forEach(item => observer.observe(item));
           }
         },
@@ -669,26 +764,26 @@
     };
 
     const $ = (id) => document.getElementById(id);
-    
+
     function getTheme() {
       return localStorage.getItem(THEME_KEY) || 'dark';
     }
-    
+
     function setTheme(theme) {
       document.body.classList.toggle('light-mode', theme === 'light');
       localStorage.setItem(THEME_KEY, theme);
     }
-    
+
     function toggleTheme() {
       setTheme(document.body.classList.contains('light-mode') ? 'dark' : 'light');
     }
-    
+
     function escapeHtml(text) {
       const div = document.createElement('div');
       div.textContent = String(text ?? '');
       return div.innerHTML;
     }
-    
+
     function renderTOC(data) {
       const items = data.cards.map((card, index) => [`card-${index}`, card?.title || `Card ${index + 1}`]);
       $('toc').innerHTML = items.map(([id, label]) => `
@@ -698,58 +793,60 @@
         </a>
       `).join('');
     }
-    
+
     function renderAboutRows(rows) {
-  $('aboutRows').innerHTML = rows.length
-    ? rows.map(row => {
-        let valueHtml = '';
+      $('aboutRows').innerHTML = rows.length
+        ? rows.map(row => {
+            let valueHtml = '';
 
-        if (Array.isArray(row.socials)) {
-          valueHtml = row.socials.map(([name, url]) => `
-            <div>
-              ${escapeHtml(name)}:
-              <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
-                ${escapeHtml(url)}
-              </a>
+            if (Array.isArray(row.socials)) {
+              valueHtml = `
+                <div class="socials-list">
+                  ${row.socials.map(([name, url]) => `
+                    <a class="social-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(url)}">
+                      <span class="name">${escapeHtml(name)}</span>
+                      <span class="subtitle">${escapeHtml(url)}</span>
+                    </a>
+                  `).join('')}
+                </div>
+              `;
+            } else {
+              valueHtml = escapeHtml(row.value || '');
+            }
+
+            return `
+              <div class="about-line">
+                <div class="k">${escapeHtml(row.label || '')}</div>
+                <div class="v">${valueHtml}</div>
+              </div>
+            `;
+          }).join('')
+        : '<div class="about-line"><div class="v">No info added yet.</div></div>';
+    }
+
+    function renderCards(cards) {
+      $('cardList').innerHTML = cards.length ? cards.map((card, index) => `
+        <section class="card" id="card-${index}">
+          <style>${card.css || ''}</style>
+          <div class="card-head">
+            <div class="section-title"><span class="pulse-icon"></span><h3>${escapeHtml(card.title || 'Untitled')}</h3></div>
+            <span class="card-subhead">${escapeHtml(card.subtitle || '')}</span>
+          </div>
+          <div class="card-body">
+            <div class="card-content">
+              ${card.contents || ''}
             </div>
-          `).join('');
-        } else {
-          valueHtml = escapeHtml(row.value || '');
-        }
+          </div>
+        </section>
+      `).join('') : '';
 
-        return `
-          <div class="about-line">
-            <div class="k">${escapeHtml(row.label || '')}</div>
-            <div class="v">${valueHtml}</div>
-          </div>
-        `;
-      }).join('')
-    : '<div class="about-line"><div class="v">No info added yet.</div></div>';
-}
-    
-   function renderCards(cards) {
-    $('cardList').innerHTML = cards.length ? cards.map((card, index) => `
-      <section class="card" id="card-${index}">
-        <style>${card.css || ''}</style>
-        <div class="card-head">
-          <div class="section-title"><span class="pulse-icon"></span><h3>${escapeHtml(card.title || 'Untitled')}</h3></div>
-          <span class="card-subhead">${escapeHtml(card.subtitle || '')}</span>
-        </div>
-        <div class="card-body">
-          <div class="card-content">
-            ${card.contents || ''}
-          </div>
-        </div>
-      </section>
-    `).join('') : '';
-    
-    cards.forEach((card, i) => {
-      if (typeof card.script === 'function') {
-        try { card.script(document.getElementById(`card-${i}`)); } catch(e) { console.error(e); }
-      }
-    });
-  }
-    
+      cards.forEach((card, i) => {
+        if (typeof card.script === 'function') {
+          try { card.script(document.getElementById(`card-${i}`)); } catch(e) { console.error(e); }
+        }
+      });
+    }
+
     function renderAll(data) {
       $('siteName').textContent = data.siteName;
       $('siteTagline').textContent = data.tagline;
@@ -759,10 +856,9 @@
       renderAboutRows(data.about || []);
       renderCards(data.cards || []);
     }
-    
+
     setTheme(getTheme());
     renderAll(siteData);
-    
     $('themeBtn').addEventListener('click', toggleTheme);
   </script>
 </body>

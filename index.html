@@ -593,7 +593,6 @@
       $('siteTagline').textContent = data.tagline;
       $('heroTitle').textContent = data.heroTitle;
       $('heroLead').textContent = data.heroLead;
-      $('profileFrame').srcdoc = data.profileFrameHtml || '';
       renderTOC(data);
       renderAboutRows(data.about || []);
       renderCards(data.cards || []);

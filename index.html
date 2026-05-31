@@ -224,7 +224,9 @@
         },
         { 
           label: 'Socials', 
-          value: '[TO BE PLACED]' 
+          socials: [
+            ['ko-fi.com/chxd', 'https://ko-fi.com/chxd']
+          ]
         }
       ],
       cards: [
@@ -237,6 +239,7 @@
                 <div>
                   <h4>EDUCATIONAL WEBSITES</h4>
                   <p>Learning resources and tools</p>
+                  <p>Note: for tinyurl or script.google if they won't open try using incognito mode!</p>
                 </div>
               </div>
             </div>
@@ -292,6 +295,34 @@
               </div>
               <div class="url-text">https://tinyurl.com/taskgiver?special=PracticeGuide</div>
             </div>
+
+            <div class="item">
+              <div class="item-top">
+                <div>
+                  <h4>Train Electronics</h4>
+                  <p>Build basic electronics and Logic Gates</p>
+                </div>
+                <a href="https://tinyurl.com/trainelectronics" target="_blank" rel="noopener noreferrer">
+                  Open Link
+                </a>
+              </div>
+              <div class="url-text">https://tinyurl.com/trainelectronics</div>
+            </div>
+
+            <div class="item">
+              <div class="item-top">
+                <div>
+                  <h4>Advanced Train Electronics</h4>
+                  <p>Build basic electronics and Logic Gates(More Advance)</p>
+                </div>
+                <a href="https://tinyurl.com/electricdig" target="_blank" rel="noopener noreferrer">
+                  Open Link
+                </a>
+              </div>
+              <div class="url-text">https://tinyurl.com/electricdig</div>
+            </div>
+
+            
           `,
           css: `
             .item {
@@ -656,12 +687,28 @@
     }
     
     function renderAboutRows(rows) {
-      $('aboutRows').innerHTML = rows.length ? rows.map(row => `
-        <div class="about-line">
-          <div class="k">${escapeHtml(row.label || '')}</div>
-          <div class="v">${escapeHtml(row.value || '')}</div>
-        </div>
-      `).join('') : '<div class="about-line"><div class="v">No info added yet.</div></div>';
+      $('aboutRows').innerHTML = rows.length
+        ? rows.map(row => {
+            let valueHtml = '';
+    
+            if (Array.isArray(row.socials)) {
+              valueHtml = row.socials.map(([name, url]) => `
+                <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
+                  ${escapeHtml(name)}
+                </a>
+              `).join('<br>');
+            } else {
+              valueHtml = escapeHtml(row.value || '');
+            }
+    
+            return `
+              <div class="about-line">
+                <div class="k">${escapeHtml(row.label || '')}</div>
+                <div class="v">${valueHtml}</div>
+              </div>
+            `;
+          }).join('')
+        : '<div class="about-line"><div class="v">No info added yet.</div></div>';
     }
     
    function renderCards(cards) {

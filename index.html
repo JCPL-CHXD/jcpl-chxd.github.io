@@ -687,29 +687,32 @@
     }
     
     function renderAboutRows(rows) {
-      $('aboutRows').innerHTML = rows.length
-        ? rows.map(row => {
-            let valueHtml = '';
-    
-            if (Array.isArray(row.socials)) {
-              valueHtml = row.socials.map(([name, url]) => `
-                <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
-                  ${escapeHtml(name)}
-                </a>
-              `).join('<br>');
-            } else {
-              valueHtml = escapeHtml(row.value || '');
-            }
-    
-            return `
-              <div class="about-line">
-                <div class="k">${escapeHtml(row.label || '')}</div>
-                <div class="v">${valueHtml}</div>
-              </div>
-            `;
-          }).join('')
-        : '<div class="about-line"><div class="v">No info added yet.</div></div>';
-    }
+  $('aboutRows').innerHTML = rows.length
+    ? rows.map(row => {
+        let valueHtml = '';
+
+        if (Array.isArray(row.socials)) {
+          valueHtml = row.socials.map(([name, url]) => `
+            <div>
+              ${escapeHtml(name)}:
+              <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
+                ${escapeHtml(url)}
+              </a>
+            </div>
+          `).join('');
+        } else {
+          valueHtml = escapeHtml(row.value || '');
+        }
+
+        return `
+          <div class="about-line">
+            <div class="k">${escapeHtml(row.label || '')}</div>
+            <div class="v">${valueHtml}</div>
+          </div>
+        `;
+      }).join('')
+    : '<div class="about-line"><div class="v">No info added yet.</div></div>';
+}
     
    function renderCards(cards) {
     $('cardList').innerHTML = cards.length ? cards.map((card, index) => `
